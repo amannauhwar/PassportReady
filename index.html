@@ -25,8 +25,11 @@
     </main>
 
     <script>
-
+        // === CONFIGURATION ===
+        // ▼▼▼ PASTE YOUR RENDER SERVER URL HERE ▼▼▼
         const API_SERVER_URL = "https://passportready.onrender.com"; 
+        // =====================
+
 
         // Get references to the HTML elements
         const fileInput = document.getElementById('file-input');
@@ -85,20 +88,19 @@
                 });
 
                 if (uploadResponse.ok) {
-                    setStatus("Upload successful! Processing file...", "success");
+                    setStatus("Upload successful! Starting download...", "success");
 
-                    // +++ THIS IS THE 6-SECOND PAUSE +++
-                    // We wait 6 seconds (6000ms) to give the backend
-                    // time to copy the file to the download bucket.
-                    await new Promise(resolve => setTimeout(resolve, 3000)); 
-
-                    setStatus("Download starting...", "success");
+                    // --- DELAY REMOVED ---
+                    // The download will now start immediately.
 
                     // STEP 3: Trigger the DOWNLOAD
                     const link = document.createElement('a');
                     link.href = downloadUrl;
                     link.download = selectedFile.name; // Use the original file name
                     
+                    // setTimeout(() => {
+                        
+                    // }, 2000);
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
