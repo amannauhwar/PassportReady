@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <meta http-equiv="refresh" content="0; url='https://passportready.pages.dev'" /> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passport Image Maker</title>
@@ -23,19 +22,6 @@
     </main>
 
     <script>
-
-// Check if we've already redirected in this session
-     if (!sessionStorage.getItem('hasRedirected')) {
-    
-    // 1. Set a flag so this doesn't run again
-      sessionStorage.setItem('hasRedirected', 'true');
-    
-    // 2. Perform the redirect
-      window.location.href = 'https.://passportready.pages.dev';
-}
-
-// ... all your other uploader code goes below this
-// (const API_SERVER_URL = ...)
         // === CONFIGURATION ===
         const API_SERVER_URL = "https://2n57pjdjyfwn2s7m4zjormgwuy0lirsc.lambda-url.eu-north-1.on.aws"; 
         const POLLING_INTERVAL = 2000; // 3 seconds
